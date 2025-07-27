@@ -958,13 +958,27 @@ body {
 
 @media (max-width: 768px) {
     .header-content {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px 0;
+        flex-direction: row; /* ヘッダー要素を横並びに戻す */
+        justify-content: space-between; /* 要素間にスペースを均等に配置 */
+        align-items: center;
+        padding: 10px 20px; /* パディングを減らして高さを抑える */
     }
     
-    .nav ul {
-        gap: 25px;
+    .logo h1 {
+        font-size: 24px; /* ロゴのフォントサイズを小さく */
+    }
+    
+    .logo span {
+        font-size: 11px; /* ロゴのサブテキストも小さく */
+    }
+
+    .nav {
+        display: none; /* ナビゲーションは一旦非表示（ハンバーガーメニュー化の検討のため） */
+    }
+
+    .cta-button {
+        padding: 10px 20px; /* CTAボタンのパディングも調整 */
+        font-size: 14px;
     }
     
     .hero {
