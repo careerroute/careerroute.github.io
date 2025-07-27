@@ -1,0 +1,1080 @@
+/* 基本設定 */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.7;
+    color: #34495E; /* ダークグレー系 */
+    background-color: #F8FBF8; /* 非常に薄いグリーン系 */
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* ヘッダー */
+.header {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(15px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+}
+
+.logo h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #2E7D32; /* ダークグリーン */
+    margin-bottom: 2px;
+}
+
+.logo span {
+    font-size: 13px;
+    color: #66BB6A; /* ミドルグリーン */
+    font-weight: 400;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #34495E;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav a:hover {
+    color: #2E7D32; /* ダークグリーン */
+    transform: translateY(-2px);
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #4CAF50, #66BB6A); /* グリーン系グラデーション */
+    color: white;
+    padding: 14px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.35);
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.45);
+}
+
+/* ヒーローセクション */
+.hero {
+    background: linear-gradient(135deg, #E8F5E9 0%, #F1F8E9 100%); /* 薄いグリーン系グラデーション */
+    padding: 150px 0 100px;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'%3E%3Ccircle cx=\'20\' cy=\'20\' r=\'2.5\' fill=\'%23A5D6A7\' opacity=\'0.4\'%3E%3C/circle%3E%3Ccircle cx=\'80\' cy=\'40\' r=\'2\' fill=\'%2381C784\' opacity=\'0.5\'%3E%3C/circle%3E%3Ccircle cx=\'60\' cy=\'80\' r=\'1.5\' fill=\'%2366BB6A\' opacity=\'0.3\'%3E%3C/circle%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 25px;
+    color: #2E7D32; /* ダークグリーン */
+}
+
+.highlight {
+    color: #4CAF50; /* グリーン */
+    position: relative;
+}
+
+.highlight::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(90deg, #A5D6A7, #4CAF50); /* グリーン系アンダーライン */
+    opacity: 0.4;
+    border-radius: 5px;
+}
+
+.hero-subtitle {
+    font-size: 19px;
+    color: #5A6C7D;
+    margin-bottom: 45px;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 36px;
+    border-radius: 35px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 17px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4CAF50, #66BB6A); /* グリーン系グラデーション */
+    color: white;
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.35);
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(76, 175, 80, 0.45);
+}
+
+.btn-secondary {
+    background: white;
+    color: #2E7D32; /* ダークグリーン */
+    border: 2px solid #2E7D32;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.btn-secondary:hover {
+    background: #2E7D32;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-card {
+    background: white;
+    padding: 45px;
+    border-radius: 25px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transform: rotate(3deg);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.hero-card:hover {
+    transform: rotate(0deg) scale(1.03);
+}
+
+.hero-card i {
+    font-size: 52px;
+    color: #4CAF50; /* グリーン */
+    margin-bottom: 25px;
+}
+
+.hero-card h3 {
+    font-size: 26px;
+    color: #34495E;
+    margin-bottom: 12px;
+}
+
+.hero-card p {
+    color: #66BB6A; /* ミドルグリーン */
+    font-weight: 500;
+    font-size: 17px;
+}
+
+/* セクション共通 */
+.section-title {
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2E7D32; /* ダークグリーン */
+}
+
+.section-subtitle {
+    font-size: 19px;
+    text-align: center;
+    color: #5A6C7D;
+    margin-bottom: 70px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+/* 課題提起セクション */
+.problem {
+    padding: 100px 0;
+    background: #F8FBF8; /* 非常に薄いグリーン系 */
+}
+
+.problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 70px;
+}
+
+.problem-card {
+    background: white;
+    padding: 45px 35px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 6px solid #4CAF50; /* グリーン */
+}
+
+.problem-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.problem-icon {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, #4CAF50, #66BB6A); /* グリーン系グラデーション */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.2);
+}
+
+.problem-icon i {
+    font-size: 36px;
+    color: white;
+}
+
+.problem-card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    color: #34495E;
+    line-height: 1.4;
+}
+
+.problem-card p {
+    color: #5A6C7D;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* サービスセクション */
+.services {
+    padding: 100px 0;
+    background: white;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-top: 70px;
+}
+
+.service-category {
+    background: #F8FBF8; /* 非常に薄いグリーン系 */
+    padding: 45px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+}
+
+.category-title {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 26px;
+    font-weight: 600;
+    color: #34495E;
+    margin-bottom: 35px;
+    padding-bottom: 18px;
+    border-bottom: 4px solid #2E7D32; /* ダークグリーン */
+}
+
+.category-title i {
+    font-size: 32px;
+    color: #2E7D32; /* ダークグリーン */
+}
+
+.service-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, #66BB6A, #81C784); /* ミドルグリーン系グラデーション */
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    box-shadow: 0 3px 10px rgba(102, 187, 106, 0.3);
+}
+
+.service-icon i {
+    font-size: 22px;
+    color: white;
+}
+
+.service-card h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #34495E;
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    color: #5A6C7D;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+/* フローセクション */
+.flow {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #E8F5E9 0%, #F1F8E9 100%); /* 薄いグリーン系グラデーション */
+}
+
+.flow-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px;
+    margin-top: 70px;
+}
+
+.step {
+    text-align: center;
+    position: relative;
+}
+
+.step::after {
+    content: ">";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    top: 50px;
+    right: -25px;
+    font-size: 30px;
+    color: #A5D6A7; /* 薄いグリーン */
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.step:last-child::after {
+    display: none;
+}
+
+.step-number {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, #4CAF50, #66BB6A); /* グリーン系グラデーション */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    margin: 0 auto 25px;
+    box-shadow: 0 10px 25px rgba(76, 175, 80, 0.35);
+    position: relative;
+    z-index: 2;
+}
+
+.step-content h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #34495E;
+    margin-bottom: 18px;
+}
+
+.step-content p {
+    color: #5A6C7D;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* お客様の声セクション */
+.testimonials {
+    padding: 100px 0;
+    background: white;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 70px;
+}
+
+.testimonial-card {
+    background: #F8FBF8; /* 非常に薄いグリーン系 */
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: -15px;
+    left: 25px;
+    font-size: 70px;
+    color: #A5D6A7; /* 薄いグリーン */
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-content {
+    margin-bottom: 25px;
+}
+
+.testimonial-content p {
+    font-style: italic;
+    color: #34495E;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.author-info h4 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #34495E;
+    margin-bottom: 6px;
+}
+
+.author-info span {
+    font-size: 15px;
+    color: #66BB6A; /* ミドルグリーン */
+}
+
+/* FAQセクション */
+.faq {
+    padding: 100px 0;
+    background: #F8FBF8; /* 非常に薄いグリーン系 */
+}
+
+.faq-list {
+    max-width: 850px;
+    margin: 70px auto 0;
+}
+
+.faq-item {
+    background: white;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.faq-question {
+    padding: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background: #E8F5E9; /* 薄いグリーン */
+}
+
+.faq-question h3 {
+    font-size: 19px;
+    font-weight: 600;
+    color: #34495E;
+}
+
+.faq-question i {
+    color: #2E7D32; /* ダークグリーン */
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    padding: 0 30px 30px;
+    background: #E8F5E9; /* 薄いグリーン */
+}
+
+.faq-answer p {
+    color: #5A6C7D;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* お問い合わせセクション */
+.contact {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #2E7D32 0%, #388E3C 100%); /* ダークグリーン系グラデーション */
+    color: white;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.contact-info h2 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.contact-info p {
+    font-size: 19px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    color: #CFD8DC; /* 明るいグレー */
+}
+
+.contact-features {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.feature i {
+    color: #A5D6A7; /* 薄いグリーン */
+    font-size: 20px;
+}
+
+.feature span {
+    color: #CFD8DC;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.contact-form {
+    background: white;
+    padding: 45px;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #34495E;
+    font-size: 17px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #E0E0E0;
+    border-radius: 10px;
+    font-size: 17px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4CAF50; /* グリーン */
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+.submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #4CAF50, #66BB6A); /* グリーン系グラデーション */
+    color: white;
+    padding: 18px;
+    border: none;
+    border-radius: 10px;
+    font-size: 19px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.35);
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(76, 175, 80, 0.45);
+}
+
+/* フッター */
+.footer {
+    background: #2E7D32; /* ダークグリーン */
+    color: white;
+    padding: 70px 0 25px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.footer-info .logo h3 {
+    font-size: 26px;
+    color: #A5D6A7; /* 薄いグリーン */
+    margin-bottom: 8px;
+}
+
+.footer-info .logo p {
+    font-size: 13px;
+    color: #66BB6A; /* ミドルグリーン */
+    margin-bottom: 25px;
+}
+
+.footer-info p {
+    color: #CFD8DC;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #A5D6A7; /* 薄いグリーン */
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #CFD8DC;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #A5D6A7;
+}
+
+.footer-contact p {
+    color: #CFD8DC;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-contact i {
+    color: #66BB6A; /* ミドルグリーン */
+    width: 22px;
+    font-size: 18px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 25px;
+    border-top: 1px solid #388E3C; /* ダークグリーン */
+    color: #9E9E9E; /* グレー */
+    font-size: 15px;
+}
+
+/* LINE連携用スタイル */
+
+/* フローティングLINEボタン */
+.floating-line-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(120px);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.floating-line-button.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.floating-line-button.scroll-down {
+    transform: translateY(100px);
+}
+
+.floating-line-button a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #4CAF50; /* グリーン */
+    color: white;
+    padding: 14px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.35);
+    transition: all 0.3s ease;
+}
+
+.floating-line-button a:hover {
+    background: #388E3C; /* ダークグリーン */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.45);
+}
+
+.floating-line-button i {
+    font-size: 20px;
+}
+
+.floating-line-button span {
+    font-size: 15px;
+}
+
+/* QRコードモーダル */
+.qr-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.qr-modal-content {
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.qr-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.qr-modal-header h3 {
+    font-size: 20px;
+    color: #34495E;
+    margin: 0;
+}
+
+.qr-close-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #95A5A6;
+    cursor: pointer;
+    padding: 0;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.qr-close-btn:hover {
+    color: #34495E;
+    background-color: #F0F0F0;
+}
+
+.qr-code-container {
+    text-align: center;
+}
+
+.qr-placeholder {
+    width: 220px;
+    height: 220px;
+    border: 3px dashed #BDBDBD; /* グレー */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    border-radius: 15px;
+    background: #F5F5F5; /* 薄いグレー */
+    font-size: 18px;
+    color: #757575; /* ダークグレー */
+}
+
+.qr-code-container p {
+    color: #757575;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* LINEボタンのスタイル強化 */
+.btn-primary[href*="line.me"] {
+    background: linear-gradient(135deg, #4CAF50, #66BB6A); /* グリーン系グラデーション */
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary[href*="line.me"]:hover {
+    background: linear-gradient(135deg, #388E3C, #4CAF50); /* ダークグリーン系グラデーション */
+}
+
+.btn-primary[href*="line.me"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn-primary[href*="line.me"]:hover::before {
+    left: 100%;
+}
+
+/* LINE関連のアイコン */
+.fab.fa-line {
+    font-size: 1.3em;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 25px;
+    }
+    .hero-content {
+        gap: 60px;
+    }
+    .hero-title {
+        font-size: 48px;
+    }
+    .section-title {
+        font-size: 38px;
+    }
+    .services-grid {
+        gap: 60px;
+    }
+    .contact-content {
+        gap: 60px;
+    }
+    .footer-content {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 0;
+    }
+    
+    .nav ul {
+        gap: 25px;
+    }
+    
+    .hero {
+        padding: 120px 0 80px;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 40px;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .flow-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .step::after {
+        display: none;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .problem-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .floating-line-button {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .floating-line-button a {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+    
+    .floating-line-button span {
+        display: none;
+    }
+    
+    .qr-modal-content {
+        padding: 20px;
+        margin: 20px;
+    }
+    
+    .qr-modal-header h3 {
+        font-size: 16px;
+    }
+    
+    .qr-placeholder {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .hero {
+        padding: 100px 0 60px;
+    }
+    
+    .hero-title {
+        font-size: 32px;
+    }
+    
+    .section-title {
+        font-size: 32px;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        padding: 15px 28px;
+        font-size: 15px;
+    }
+    
+    .floating-line-button a {
+        padding: 8px 12px;
+    }
+    
+    .floating-line-button i {
+        font-size: 18px;
+    }
+}
+
