@@ -724,10 +724,13 @@ body {
     font-weight: 600;
     margin-bottom: 25px;
     color: #A5D6A7; /* 薄いグリーン */
+    text-align: center; 
 }
 
 .footer-links ul {
     list-style: none;
+    padding: 0; /* リストの左パディングをリセット */
+    text-align: center; /* ここを追加 */
 }
 
 .footer-links li {
